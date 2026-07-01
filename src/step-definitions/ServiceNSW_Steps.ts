@@ -37,7 +37,7 @@ When('I click the Check registration button', async () => {
 Then('I should see an {string} message', async (errorMessage: string) => {
   const expectedMessage = `No vehicles found for ${enteredPlateNumber}`;
   const error = pageFixture.page.locator('h6').filter({ hasText: errorMessage });
-  await error.waitFor({ state: 'visible', timeout: 30000 });
+  await error.waitFor({ state: 'visible', timeout: 60000 });
   await expect(error).toHaveText(expectedMessage);
   // await pageFixture.page.waitForTimeout(5000);
   

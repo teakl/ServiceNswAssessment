@@ -16,13 +16,17 @@ AfterAll(async function(){
 
 // Before hook: Runs before each scenario
 Before(async function() {
-    browser = await chromium.launch({ headless: false });
+    browser = await chromium.launch({ headless: true });
     pageFixture.context = await browser.newContext({ viewport: { width: 1280, height: 720 } });
     pageFixture.page = await pageFixture.context.newPage();
 })
 
 // After hook: Runs after each scenario
 After(async function() {
-    await pageFixture.page.close();
-    await browser.close();
+    if (pageFixture.page) {
+        await pageFixture.page.close();
+    }
+    if (browser) {
+        await browser.close();
+    }
 })

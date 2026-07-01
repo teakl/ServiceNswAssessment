@@ -2,9 +2,9 @@ name: Cucumber CI
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 
 jobs:
   test:
@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Run Cucumber tests
-        run: npm run serviceNSW
+        run: npx cucumber-js --require-module ts-node/register --require "src/step-definitions/**/*.ts" "src/features/**/*.feature" --format json:reports/cucumber-report.json && node generate-cucumber-report.js
 
       - name: Upload Cucumber HTML report
         if: always()

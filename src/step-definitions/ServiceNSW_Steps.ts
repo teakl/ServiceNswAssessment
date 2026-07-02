@@ -35,10 +35,11 @@ When('I click the Check registration button', async () => {
 });
 
 Then('I should see an {string} message', async (errorMessage: string) => {
-  const expectedMessage = `No vehicles found for ${enteredPlateNumber}`;
-  const error = pageFixture.page.locator('h6').filter({ hasText: errorMessage });
-  await error.waitFor({ state: 'visible', timeout: 60000 });
-  await expect(error).toHaveText(expectedMessage);
-  // await pageFixture.page.waitForTimeout(5000);
-  
+  // const expectedMessage = `No vehicles found for ${enteredPlateNumber}`;
+  const expectedMessage = errorMessage;
+  const actualMessage = await pageFixture.page
+  .locator('h6.StyledInPageAlertTitle-sc-enx4n2-2')
+  .innerText();
+  console.log(`Actual Error: ${actualMessage}`);
+  await expect(actualMessage).toBe(expectedMessage);
 });

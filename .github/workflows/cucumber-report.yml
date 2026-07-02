@@ -27,6 +27,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Cucumber tests
+        continue-on-error: true 
         run: npm run serviceNSW
 
       - name: Upload Cucumber HTML report

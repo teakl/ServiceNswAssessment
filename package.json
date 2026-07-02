@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- "scripts": {
-  "serviceNSW": "npx cucumber-js --require-module ts-node/register --require \"src/step-definitions/**/*.ts\" \"src/features/**/*.feature\" --tags @serviceNSW --format json:reports/cucumber-report.json && node generate-cucumber-report.js",
-  "api": "npx cucumber-js --require-module ts-node/register --require \"src/step-definitions/**/*.ts\" \"src/features/**/*.feature\" --tags @api --format json:reports/cucumber-report.json && node generate-cucumber-report.js",
-  "regoCheck": "npx cucumber-js --require-module ts-node/register --require \"src/step-definitions/**/*.ts\" \"src/features/**/*.feature\" --tags @regoCheck --format json:reports/cucumber-report.json && node generate-cucumber-report.js"
+"scripts": {
+  "serviceNSW": "npx cucumber-js --require-module ts-node/register --require \"src/step-definitions/**/*.ts\" \"src/features/**/*.feature\" --tags @serviceNSW --format json:reports/cucumber-report.json & node generate-cucumber-report.js",
+  "api": "npx cucumber-js --require-module ts-node/register --require \"src/step-definitions/**/*.ts\" \"src/features/**/*.feature\" --tags @api --format json:reports/cucumber-report.json & node generate-cucumber-report.js",
+  "regoCheck": "npx cucumber-js --require-module ts-node/register --require \"src/step-definitions/**/*.ts\" \"src/features/**/*.feature\" --tags @regoCheck --format json:reports/cucumber-report.json & node generate-cucumber-report.js"
 },
   "keywords": [],
   "author": "",

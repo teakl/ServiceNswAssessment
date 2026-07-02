@@ -26,7 +26,7 @@ jobs:
       - name: Install Playwright Branded Browser and System Deps
         # CRITICAL: We install 'chrome' system-wide so 'channel: chromium' works on Linux,
         # and include system dependencies (--with-deps) for video/rendering libraries.
-        run: npx playwright install --with-deps chrome
+        run: npx playwright install --with-deps chromium
 
       - name: Run Cucumber tests
         continue-on-error: true

@@ -27,5 +27,6 @@ Then('I print the brewery details for each record', async () => {
 
   responseBody.forEach((brewery: any, index: number) => {
     console.log(`Brewery ${index + 1}: name=${brewery.name || 'N/A'}, address_1=${brewery.address_1 || 'N/A'}`);
+    //testing
   });
 });

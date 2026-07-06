@@ -25,7 +25,7 @@ BeforeAll(async () => {
     }
 
     browser = await chromium.launch({ 
-        headless: true,
+        headless: false,
         channel: 'chromium', 
         args: launchArgs
     });
